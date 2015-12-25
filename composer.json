@@ -1,5 +1,5 @@
 {
-    "name": "mpaleo/scaffolder-theme-material",
+    "name": "iqria/scaffolder-theme-material",
     "description": "Laravel scaffolder material theme",
     "license": "MIT",
     "keywords": [
@@ -17,11 +17,21 @@
         {
             "name": "Michael Paleo",
             "email": "github@michaelpaleo.com"
+        },
+        {
+            "name": "Konstantin Mirin",
+            "email": "konstantin.mirin@iqria.com"
         }
     ],
     "require": {
         "php": ">=5.5.9"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/IQ-RIA/scaffolder-theme-material"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "ScaffolderTheme\\": "src/ScaffolderTheme/"

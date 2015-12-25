@@ -61,6 +61,6 @@ class MaterialThemeForm extends FormBuilder
         <div class="input-field col l6 s8 offset-l3 offset-s2">
             %s
             %s
-        </div>', parent::input($type, $name, $value, $options), parent::label($name, null, []));
+        </div>', parent::input($type, $name, $value, $options), parent::label($name, 'test test', []));
     }
 }
