@@ -24,6 +24,11 @@ class MaterialThemeForm extends FormBuilder
 
     protected function adjustArguments($method, $arguments)
     {
+        //last argument is always $options which should be an array
+        //this may not be array if it was not passed. In this case we add it.
+        if (!is_array($arguments[sizeof($arguments) - 1])) {
+            $arguments[] = [];
+        }
         //making sure that each form element has id defined
         $options = $arguments[sizeof($arguments) - 1];
         $options['id'] = isset($options['id']) ? $options['id'] : $arguments[0];// setting id=field_name if ID was not defined already
