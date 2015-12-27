@@ -24,6 +24,11 @@ class MaterialThemeForm extends FormBuilder
 
     protected function adjustArguments($method, $arguments)
     {
+        //making sure that each form element has id defined
+        $options = $arguments[sizeof($arguments) - 1];
+        $options['id'] = isset($options['id']) ? $options['id'] : $arguments[0];// setting id=field_name if ID was not defined already
+        $arguments[sizeof($arguments) - 1] = $options;
+        //modifications for each specific control
         switch ($method) {
             case 'textarea':
                 //injecting class=materialize-textarea
@@ -45,6 +50,8 @@ class MaterialThemeForm extends FormBuilder
     protected function wrapField($field, $labelName, $fieldOptions)
     {
         $labelText = isset($fieldOptions['label']) ? $fieldOptions['label'] : null;
+        //making sure that we match field's ID even when it is custom
+        $labelName = isset($field['id']) ? $fieldOptions['id'] : $labelName;
         return sprintf('
         <div class="input-field col l3 m4 s8 offset-l2 offset-m1 offset-s2">
             %s
@@ -54,8 +61,7 @@ class MaterialThemeForm extends FormBuilder
 
     public function checkbox($name, $value = 1, $checked = null, $options = [])
     {
-        $options['id'] = isset($options['id']) ? $options['id'] : $name;
-        return parent::hidden($name, 0) . call_user_func_array('parent::' . __FUNCTION__, [$name, $value, $checked = null, $options]);
+        return parent::hidden($name, 0) . call_user_func_array('parent::' . __FUNCTION__, func_get_args());
     }
 
     public function materialRadio($name, $value = null, $checked = null, $options = [])
