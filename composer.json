@@ -25,7 +25,8 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravelcollective/html": "5.1.*"
+        "laravelcollective/html": "5.1.*",
+        "mpaleo/scaffolder": "dev-master"
     },
     "repositories": [
         {
