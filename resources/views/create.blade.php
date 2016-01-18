@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
 
-    <a href="/{{route_prefix}}/{{breadcrumb_lw}}" class="teal-text">{{breadcrumb}}s</a> / Create
+    <a href="/{{route_prefix}}/{{breadcrumb_lw}}" class="teal-text">{{breadcrumb}}</a> / Create
 
 @endsection
 
@@ -29,6 +29,13 @@
                 Materialize.toast('Error: ' + response.statusText, 4000);
                 console.log(response);
             });
+        });
+
+        $('.datepicker').pickadate({
+            selectMonths: true,
+            selectYears: 15,
+            hiddenName: true,
+            formatSubmit: 'yyyy/mm/dd'
         });
     </script>
 
