@@ -47,7 +47,8 @@
                     <a class="waves-effect" href="https://github.com/mPaleo/scaffolder-theme-material" target="_blank">GitHub</a>
                 </li>
                 <li>
-                    <a class="waves-effect" href="https://github.com/mPaleo/scaffolder-theme-material/issues" target="_blank">Help</a>
+                    <a class="waves-effect" href="https://github.com/mPaleo/scaffolder-theme-material/issues"
+                       target="_blank">Help</a>
                 </li>
             </ul>
 

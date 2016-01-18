@@ -45,8 +45,7 @@ class ScaffolderThemeServiceProvider extends AbstractThemeServiceProvider
 
     protected function registerThemeExtension()
     {
-        $this->app->singleton('scaffolder.theme.extension', function ()
-        {
+        $this->app->singleton('scaffolder.theme.extension', function () {
             return new MaterialThemeExtension();
         });
     }
