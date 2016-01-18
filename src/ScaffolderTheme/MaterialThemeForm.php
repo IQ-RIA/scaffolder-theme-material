@@ -134,4 +134,14 @@ class MaterialThemeForm extends FormBuilder
         return $this->select($name, $states, $selected, $options);
     }
 
+    public function collectionSelect($name, \Illuminate\Support\Collection $collection, $selected, $options)
+    {
+        $key = isset($options['key']) ? $options['key'] : 'id';
+        $val = isset($options['val']) ? $options['val'] : 'name';
+        $data = [];
+        foreach ($collection as $item) {
+            $data[$item->{$key}] = $item->{$val};
+        }
+        return $this->select($name, $data, $selected, $options);
+    }
 }
