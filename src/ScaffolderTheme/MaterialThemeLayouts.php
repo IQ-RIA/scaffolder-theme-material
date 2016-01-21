@@ -2,7 +2,8 @@
 
 namespace ScaffolderTheme;
 
-use Scaffolder\Themes\ScaffolderThemeLayoutsInterface;
+use Illuminate\Support\Facades\File;
+use Scaffolder\Support\Contracts\ScaffolderThemeLayoutsInterface;
 
 class MaterialThemeLayouts implements ScaffolderThemeLayoutsInterface
 {
