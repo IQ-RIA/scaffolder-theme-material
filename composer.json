@@ -39,5 +39,6 @@
     "psr-4": {
       "ScaffolderTheme\\": "src/ScaffolderTheme/"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
