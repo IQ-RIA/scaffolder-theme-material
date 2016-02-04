@@ -37,15 +37,18 @@ class MaterialThemeForm extends FormBuilder
         switch ($method) {
             case 'textarea':
                 //injecting class=materialize-textarea
-                $className = $arguments[sizeof($arguments) - 1]['class'];
-                if ($className) {
-                    if (strpos($className, 'materialize-textarea') === false) {
-                        $className .= ' materialize-textarea';
+                if (isset($arguments[sizeof($arguments) - 1]['class'])) {
+                    $className = $arguments[sizeof($arguments) - 1]['class'];
+                    if ($className) {
+                        if (strpos($className, 'materialize-textarea') === false) {
+                            $className .= ' materialize-textarea';
+                        }
+                    } else {
+                        $className = 'materialize-textarea';
                     }
                 } else {
                     $className = 'materialize-textarea';
                 }
-                $options['class'] = $className;
                 $arguments[sizeof($arguments) - 1]['class'] = $className;
                 break;
         }
